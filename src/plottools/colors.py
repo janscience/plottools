@@ -59,7 +59,6 @@ Color palettes and tools for manipulating colors.
   ![plotcolormap](figures/colors-plotcolormap.png)
 """
 
-from collections import OrderedDict
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -80,7 +79,7 @@ except ImportError:
 
 
 """ Plain rgb colors. """
-colors_plain = OrderedDict()
+colors_plain = {}
 colors_plain['red'] = '#FF0000'
 colors_plain['orange'] = '#FF8000'
 colors_plain['yellow'] = '#FFFF00'
@@ -99,7 +98,7 @@ colors_plain['gray'] = '#808080'
 colors_plain['black'] = '#000000'
 
 """ Vivid colors. """
-colors_vivid = OrderedDict()
+colors_vivid = {}
 colors_vivid['red'] = '#D71000'
 colors_vivid['orange'] = '#FF9000'
 colors_vivid['yellow'] = '#FFF700'
@@ -117,7 +116,7 @@ colors_vivid['gray'] = '#A7A7A7'
 colors_vivid['black'] = '#000000'
 
 """ Muted colors. """
-colors_muted = OrderedDict()
+colors_muted = {}
 colors_muted['red'] = '#C02717'
 colors_muted['orange'] = '#F78017'
 colors_muted['yellow'] = '#F0D730'
@@ -135,7 +134,7 @@ colors_muted['gray'] = '#A0A0A0'
 colors_muted['black'] = '#000000'
 
 """ matplotlib's tableau (tab10) colors. """
-colors_tableau = OrderedDict()
+colors_tableau = {}
 colors_tableau['red'] = '#D62728'
 colors_tableau['orange'] = '#FF7F0E'
 colors_tableau['lightgreen'] = '#BCBD22'   # olive
@@ -148,7 +147,7 @@ colors_tableau['brown'] = '#8C564B'
 colors_tableau['gray'] = '#7F7F7F'
 
 """ Colors by Joerg Henninger. """
-colors_henninger = OrderedDict()
+colors_henninger = {}
 colors_henninger['red'] = '#BA2D22'
 colors_henninger['orange'] = '#F47F17'
 colors_henninger['lightgreen'] = '#AAB71B'
@@ -156,7 +155,7 @@ colors_henninger['blue'] = '#3673A4'
 colors_henninger['purple'] = '#53379B'
 
 """ Colors from the scientific computing script. """
-colors_scicomp = OrderedDict()
+colors_scicomp = {}
 colors_scicomp['red'] = '#CC0000'
 colors_scicomp['orange'] = '#FF9900'
 colors_scicomp['lightorange'] = '#FFCC00'
@@ -167,7 +166,7 @@ colors_scicomp['blue'] = '#0000CC'
 """ Colors of the corporate design of the University of Tuebingen.
 The first three are the primary colors, the remaining ones the secondary colors.
 """
-colors_unituebingen = OrderedDict()
+colors_unituebingen = {}
 colors_unituebingen['red'] = '#A51E37'
 colors_unituebingen['gold'] = '#B4A069'
 colors_unituebingen['black'] = '#32414B'
@@ -188,7 +187,7 @@ colors_unituebingen['brown'] = '#916946'
 Colors taken from:
 Originally by MalteAhrens at de.wikipedia. Vectorization by User:SidShakal - Raster version from Wikimedia Commons., Gemeinfrei, https://commons.wikimedia.org/w/index.php?curid=3574696
 """
-colors_itten = OrderedDict()
+colors_itten = {}
 colors_itten['red'] = '#E32322'
 colors_itten['deeporange'] = '#EA621F'
 colors_itten['orange'] = '#F18E1C'
@@ -203,7 +202,7 @@ colors_itten['magenta'] = '#6D398B'
 colors_itten['pink'] = '#c4037d'
 
 """ Ethan Schoonover's color palette, solarized. Taken from the LaTeX xcolor-solarized package. """
-colors_solarized = OrderedDict()
+colors_solarized = {}
 colors_solarized['red'] = '#DC322F'
 colors_solarized['orange'] = '#CB4B16'
 colors_solarized['yellow'] = '#B58900'
@@ -222,7 +221,7 @@ colors_solarized['base1'] = '#93A1A1'
 colors_solarized['base2'] = '#EEE8D5'
 
 """ Google's material color palette. Taken from the LaTeX xcolor-material package. """
-colors_material = OrderedDict()
+colors_material = {}
 colors_material['red'] = '#F44336'
 colors_material['deeporange'] = '#FF5722'
 colors_material['orange'] = '#FF9800'
@@ -246,7 +245,7 @@ colors_material['black'] = '#000000'
 colors_material['brown'] = '#795548'
 
 """ All color palettes. """
-palettes = OrderedDict()
+palettes = {}
 palettes['plain'] = colors_plain
 palettes['vivid'] = colors_vivid
 palettes['muted'] = colors_muted
