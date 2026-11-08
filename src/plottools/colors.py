@@ -850,6 +850,8 @@ def plot_colormap(ax, cmap, luminance=True):
             ax.set_ylim(0.0, 2.1)
         except:
             print('failed to plot luminance gradient')
+            print('you might need to install the colorspacious package:')
+            print('> pip install colorspacious')
             raise
     ax.set_yticks([])
 
