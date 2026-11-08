@@ -314,18 +314,18 @@ def prefix_formatter(x, pos):
     """
     if x <= 0:
         return '%g' % x
-    prefixes = {-4: 'p', -3: 'n', -2: u'\u00B5', -1: 'm', 0: '', 1: 'k', 2: 'M', 3: 'G', 4: 'T'}
+    prefixes = {-9: '', -8: 'y', -7: 'z', -6: 'a', -5: 'f', -4: 'p', -3: 'n', -2: u'\u00B5', -1: 'm', 0: '', 1: 'k', 2: 'M', 3: 'G', 4: 'T', 5: 'P', 6: 'E', 7: 'Z', 8: 'Y', 9: ''}
     if plt.rcParams['text.usetex']:
         prefixes[-2] = r'\micro'
-    e = int(np.log10(x)//3)
+    e = max(-9, min(9, int(np.log10(x)//3)))
     prefix = prefixes[e]
     if prefix:
         if plt.rcParams['text.usetex']:
-            return u'%g\\,%s' % (x/10**(3*e), prefix)
+            return f'{x/10**(3*e):g}\\,{prefix}'
         else:
-            return u'%g\u2009%s' % (x/10**(3*e), prefix)
+            return f'{x/10**(3*e):g}\u2009{prefix}'
     else:
-        return '%g' % x
+        return f'{x:g}'
 
         
 def set_xticks_prefix(ax):
