@@ -153,11 +153,22 @@ def show_spines(ax, spines='lrtb'):
                 elif isinstance(ax.xaxis.get_major_locator(), ticker.NullLocator):
                     ax.xaxis.set_major_locator(ticker.AutoLocator())
             if len(xspines) == 1:
-                ax.xaxis.set_ticks_position(xspines[0])
-                ax.xaxis.set_label_position(xspines[0])
+                try:
+                    ax.xaxis.set_ticks_position(xspines[0])
+                    ax.xaxis.set_label_position(xspines[0])
+                except ValueError:
+                    if xspines[0] == 'bottom':
+                        xspines[0] = 'lower'
+                    if xspines[0] == 'top':
+                        xspines[0] = 'upper'
+                    ax.xaxis.set_ticks_position(xspines[0])
+                    ax.xaxis.set_label_position(xspines[0])
             else:
                 ax.xaxis.set_ticks_position('both')
-                ax.xaxis.set_label_position('bottom')
+                try:
+                    ax.xaxis.set_label_position('bottom')
+                except ValueError:
+                    ax.xaxis.set_label_position('lower')
         if len(yspines) == 0:
             ax.yaxis.set_ticks_position('none')
             ax.yaxis.label.set_visible(False)
@@ -172,11 +183,22 @@ def show_spines(ax, spines='lrtb'):
                 elif isinstance(ax.yaxis.get_major_locator(), ticker.NullLocator):
                     ax.yaxis.set_major_locator(ticker.AutoLocator())
             if len(yspines) == 1:
-                ax.yaxis.set_ticks_position(yspines[0])
-                ax.yaxis.set_label_position(yspines[0])
+                try:
+                    ax.yaxis.set_ticks_position(yspines[0])
+                    ax.yaxis.set_label_position(yspines[0])
+                except ValueError:
+                    if yspines[0] == 'left':
+                        yspines[0] = 'lower'
+                    if yspines[0] == 'right':
+                        yspines[0] = 'upper'
+                    ax.yaxis.set_ticks_position(yspines[0])
+                    ax.yaxis.set_label_position(yspines[0])
             else:
                 ax.yaxis.set_ticks_position('both')
-                ax.yaxis.set_label_position('left')
+                try:
+                    ax.yaxis.set_label_position('left')
+                except ValueError:
+                    ax.yaxis.set_label_position('lower')
 
 
 def set_spines_outward(ax, spines, offset=0):
